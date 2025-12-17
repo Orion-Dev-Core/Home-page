@@ -3,93 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Orion Dev Core – AI-powered professional office manager for service businesses. AI Amplifies, I Create.">
     <title>Orion Dev Core – AI Office Manager</title>
-    
     <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
-    
     <style>
-        :root {
-            --primary: #1a365d;
-            --secondary: #2d3748;
-            --accent: #f7fafc;
-            --success: #48bb78;
-            --coming-soon: #a0aec0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-        
-        body { 
-            background: linear-gradient(135deg, var(--accent) 0%, white 100%); 
-            color: var(--secondary); 
-            line-height: 1.6;
-        }
-        
-        h1, h2, h3 { color: var(--primary); }
-        
-        button, .btn-primary { 
-            background: var(--success) !important; 
-            border: none; 
-            color: white !important; 
-        }
-        
+        :root { --primary: #1a365d; --success: #1a73e8; --bg: #f8f9fa; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body { background: #fff; color: #3c4043; line-height: 1.6; font-family: 'Google Sans', Arial, sans-serif; }
+        h1, h2, h3 { color: var(--primary); font-weight: 400; }
+        button, .btn-primary { background: var(--success) !important; border: 1px solid var(--success); color: white !important; border-radius: 4px; padding: 10px 24px; }
         header { padding: 2rem 1rem; text-align: center; }
         .logo-container img { max-height: 80px; width: auto; margin-bottom: 10px; }
-
-        /* Pricing Card Grid */
-        .pricing-grid {
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 1.5rem; 
-            align-items: start;
-        }
-
-        .pricing-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            padding: 2rem;
-            border-radius: 8px;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s;
-        }
-
-        .active-card {
-            border: 2px solid var(--primary) !important;
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            z-index: 2;
-        }
-
-        .coming-soon { opacity: 0.6; filter: grayscale(100%); }
-
-        /* Tech Stack Icons */
-        .tech-stack img {
-            height: 30px;
-            filter: grayscale(20%);
-            transition: 0.3s;
-        }
-
-        form { 
-            background: white; 
-            padding: 2.5rem; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
-            max-width: 600px; 
-            margin: 0 auto; 
-        }
-        form label { display: block; margin-top: 1.2rem; font-weight: bold; text-align: left; }
-        form input, form select, form textarea { width: 100%; margin-top: 0.5rem; }
-
-        footer { background: #f8fafc; padding: 3rem 1rem; margin-top: 5rem; border-top: 1px solid #e2e8f0; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2.5rem; }
+        
+        /* Google Workspace Style Grid */
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .pricing-card { background: white; border: 1px solid #dadce0; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; text-align: left; transition: 0.3s; }
+        .active-card { border: 2px solid #1a73e8 !important; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .coming-soon { opacity: 0.5; background: #f1f3f4; }
+        
+        .price { font-size: 28px; color: #3c4043; font-weight: bold; margin: 10px 0; }
+        .feature-list { list-style: none; padding: 0; margin-top: 1.5rem; border-top: 1px solid #dadce0; padding-top: 1.5rem; }
+        .feature-list li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; }
+        
+        footer { background: #f8f9fa; padding: 3rem 1rem; margin-top: 5rem; border-top: 1px solid #dadce0; font-size: 0.85rem; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
     </style>
 </head>
 <body>
-    <header id="home">
+    <header>
         <nav>
             <div class="logo-container">
                 <img src="https://i.imgur.com/8FcuimC.png" alt="Orion Dev Core Logo">
@@ -98,7 +38,7 @@
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#product">Solutions</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#how-it-works">Process</a></li>
                 <li><a href="#about">Contact</a></li>
             </ul>
         </nav>
@@ -106,95 +46,62 @@
         <p>Your 24/7 AI-Powered Office Manager</p>
     </header>
 
-    <main>
-        <section style="text-align: center; padding: 1rem 0;">
+    <main style="max-width: 1100px; margin: auto; padding: 0 20px;">
+        <section style="text-align: center; padding: 2rem 0; opacity: 0.7;">
             <p><small>POWERED BY</small></p>
-            <div class="tech-stack" style="display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; align-items: center;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Gemini_language_model_logo.svg" alt="Gemini">
-                <img src="https://www.yoco.com/blog/wp-content/uploads/2021/06/yoco-logo.png" alt="Yoco">
+            <div style="display: flex; justify-content: center; gap: 40px; align-items: center; flex-wrap: wrap;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="25">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Gemini_language_model_logo.svg" height="30">
+                <img src="https://www.yoco.com/blog/wp-content/uploads/2021/06/yoco-logo.png" height="30">
             </div>
         </section>
 
         <section id="product">
-            <header style="text-align: center;">
-                <h2>Automation Packages</h2>
-                <p>Scaling professional practices with intelligent workflows.</p>
-            </header>
-            
+            <h2 style="text-align: center;">Strategic Automation Packages</h2>
             <div class="pricing-grid">
                 <div class="pricing-card coming-soon">
-                    <h3>Starter Pack</h3>
-                    <p>Essential landing page & routing.</p>
-                    <hr>
-                    <p><strong>Coming Soon</strong></p>
+                    <h3>Starter</h3>
+                    <div class="price">Coming Soon</div>
+                    <p>Essential digital presence.</p>
                 </div>
 
                 <div class="pricing-card active-card">
-                    <div style="background: var(--primary); color: white; padding: 4px; text-align: center; margin: -2rem -2rem 1.5rem -2rem; border-radius: 6px 6px 0 0;">
-                        <small>MOST POPULAR</small>
-                    </div>
+                    <div style="color: #1a73e8; font-weight: bold; font-size: 12px; text-transform: uppercase;">Most Popular</div>
                     <h3>Star Pack</h3>
-                    [span_3](start_span)[span_4](start_span)<p>Automated business system including branded page, email/calendar workflows, and Yoco integration[span_3](end_span)[span_4](end_span).</p>
-                    <p><strong>$69</strong> (R1,290) <small>Setup</small><br>
-                    [span_5](start_span)[span_6](start_span)<strong>$29</strong> (R499) <small>/Month</small>[span_5](end_span)[span_6](end_span).</p>
+                    <div class="price">R1,290 <small style="font-size: 14px; font-weight: normal;">Setup</small></div>
+                    <div class="price">R499 <small style="font-size: 14px; font-weight: normal;">/ Month</small></div>
                     <a href="#about" class="btn-primary" style="text-align: center;">Get Started</a>
-                    <hr>
-                    <ul style="list-style: none; padding: 0; font-size: 0.9rem;">
-                        [span_7](start_span)[span_8](start_span)<li>✅ Mobile-friendly Landing Page[span_7](end_span)[span_8](end_span)</li>
-                        [span_9](start_span)[span_10](start_span)<li>✅ Custom Intake Forms[span_9](end_span)[span_10](end_span)</li>
-                        [span_11](start_span)[span_12](start_span)<li>✅ Automated Gmail Confirmations[span_11](end_span)[span_12](end_span)</li>
-                        [span_13](start_span)[span_14](start_span)<li>✅ Google Calendar Sync & Reminders[span_13](end_span)[span_14](end_span)</li>
-                        [span_15](start_span)[span_16](start_span)<li>✅ Secure Yoco Payment Links[span_15](end_span)[span_16](end_span)</li>
+                    <ul class="feature-list">
+                        <li>✅ Mobile-friendly Landing Page</li>
+                        <li>✅ Custom Intake Forms (Google Sheets)</li>
+                        <li>✅ Automated Gmail Confirmations</li>
+                        <li>✅ Google Calendar Sync & Reminders</li>
+                        <li>✅ Secure Yoco Payment Links</li>
                     </ul>
                 </div>
 
                 <div class="pricing-card coming-soon">
                     <h3>Orion AI</h3>
-                    <p>The first-of-its-kind Gemini-powered office manager.</p>
-                    <hr>
-                    <p><strong>Coming Soon</strong></p>
+                    <div class="price">Coming Soon</div>
+                    <p>Gemini-powered reasoning office manager.</p>
                 </div>
             </div>
         </section>
 
-        <section id="how-it-works">
-            <header>
-                <h2>Strategic Workflow</h2>
-                [span_17](start_span)<p>Designed to reduce manual admin and help you get paid faster[span_17](end_span).</p>
-            </header>
-            <ol>
-                [span_18](start_span)<li><strong>Capture:</strong> Clients interact via your branded web form[span_18](end_span).</li>
-                [span_19](start_span)[span_20](start_span)<li><strong>Organize:</strong> Data is automatically logged into Google Sheets[span_19](end_span)[span_20](end_span).</li>
-                [span_21](start_span)<li><strong>Automate:</strong> Systems trigger custom emails and calendar bookings[span_21](end_span).</li>
-                [span_22](start_span)[span_23](start_span)<li><strong>Settle:</strong> Secure payment links are generated via Yoco[span_22](end_span)[span_23](end_span).</li>
-            </ol>
-        </section>
-
         <section id="about">
-            <header>
-                <h2>Ready to Automate?</h2>
-                [span_24](start_span)<p>Connect with us to start your Star Pack implementation[span_24](end_span).</p>
-            </header>
-            
+            <h2 style="text-align: center;">Ready to Automate?</h2>
             <form action="YOUR_APPS_SCRIPT_URL_HERE" method="POST">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
-                
+                <label>Full Name</label>
+                <input type="text" name="name" required>
+                <label>Email Address</label>
+                <input type="email" name="email" required>
                 <input type="hidden" name="package" value="Star Pack">
-                
-                <label for="message">About your business</label>
-                <textarea id="message" name="message" rows="4" placeholder="Tell us how we can help."></textarea>
-                
+                <label>Tell us about your business</label>
+                <textarea name="message" rows="4" placeholder="How can Orion help?"></textarea>
                 <button type="submit">Book Demo Call</button>
             </form>
-
             <div style="text-align: center; margin-top: 2rem;">
-                <p><strong>Direct Contact:</strong></p>
-                <p>WhatsApp: +27 72 497 1810 | [span_25](start_span)WhatsApp Business: +27 78 092 0145[span_25](end_span).</p>
+                <p><strong>Direct Support:</strong> WhatsApp +27 72 497 1810 | Business +27 78 092 0145</p>
             </div>
         </section>
     </main>
@@ -202,30 +109,22 @@
     <footer>
         <div class="footer-grid">
             <div>
-                <h4>Head Office</h4>
-                <p>
-                    <strong>Orion Dev Core</strong><br>
-                    26 Vasco Da Gama, Amanzimtoti<br>
-                    [span_26](start_span)[span_27](start_span)South Africa, 4126[span_26](end_span)[span_27](end_span).<br>
-                    [span_28](start_span)Email: grahamschubach@yahoo.com[span_28](end_span).
-                </p>
+                <h4>Contact Info</h4>
+                [span_11](start_span)[span_12](start_span)<p>Orion Dev Core<br>26 Vasco Da Gama, Amanzimtoti<br>South Africa, 4126[span_11](end_span)[span_12](end_span)</p>
+                [span_13](start_span)<p>grahamschubach@yahoo.com[span_13](end_span)</p>
             </div>
             <div>
                 <h4>Legal Resources</h4>
-                <ul style="list-style: none; padding: 0;">
-                    [span_29](start_span)<li><a href="PrivacyPolicy.pdf" target="_blank">Privacy Policy (POPIA)</a>[span_29](end_span).</li>
-                    [span_30](start_span)<li><a href="ServiceAgreement.pdf" target="_blank">Service Agreement</a>[span_30](end_span).</li>
-                </ul>
+                <a href="PrivacyPolicy.pdf" target="_blank">Privacy Policy (POPIA)</a><br>
+                <a href="ServiceAgreement.pdf" target="_blank">Service Agreement (Star Pack)</a>
             </div>
             <div>
                 <h4>POPIA Compliance</h4>
-                <p style="font-size: 0.8rem;">
-                    [span_31](start_span)[span_32](start_span)Orion Dev Core acts as an <strong>"operator"</strong> processing personal information on behalf of our clients (the <strong>"responsible parties"</strong>) in accordance with the Protection of Personal Information Act[span_31](end_span)[span_32](end_span).
-                </p>
+                [span_14](start_span)[span_15](start_span)<p>Orion Dev Core acts as an <strong>"operator"</strong> processing personal information on behalf of our clients (the <strong>"responsible parties"</strong>)[span_14](end_span)[span_15](end_span). [span_16](start_span)[span_17](start_span)Data is stored securely in Google Workspace and Yoco environments[span_16](end_span)[span_17](end_span).</p>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 3rem;">
-            <small>© 2025 Orion Dev Core - Automated Business Solutions. AI Amplifies, I Create.</small>
+        <p style="text-align: center; margin-top: 3rem; color: #70757a;">
+            © 2025 Orion Dev Core | AI Amplifies, I Create.
         </p>
     </footer>
 </body>
