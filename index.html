@@ -1,108 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orion Dev Core – AI Office Manager</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
-    <style>
-        :root { --primary: #1a365d; --success: #1a73e8; }
-        body { background: #fff; color: #3c4043; line-height: 1.6; }
-        h1, h2, h3 { color: var(--primary); font-weight: 400; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .card { border: 1px solid #dadce0; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; }
-        .featured { border: 2px solid #1a73e8; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .price { font-size: 28px; font-weight: bold; margin: 10px 0; }
-        .payment-icons img { height: 25px; margin: 5px; opacity: 0.8; }
-        footer { background: #f8f9fa; padding: 3rem 1rem; border-top: 1px solid #dadce0; font-size: 0.85rem; }
-    </style>
+<meta charset="UTF-8">
+<title>Orion Dev Core – AI Office Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Orion Dev Core – Human-centric AI office management.">
+
+<link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
+
+<style>
+/* =====================
+   DESIGN SYSTEM
+===================== */
+:root {
+    --bg: #f7fafc;
+    --bg-alt: #ffffff;
+    --text: #1a202c;
+    --primary: #1a365d;
+    --success: #48bb78;
+}
+
+[data-theme="dark"] {
+    --bg: #0f172a;
+    --bg-alt: #020617;
+    --text: #e5e7eb;
+    --primary: #93c5fd;
+    --success: #22c55e;
+}
+
+/* =====================
+   BASE STYLES
+===================== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, var(--bg), var(--bg-alt));
+    color: var(--text);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+header {
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+section {
+    max-width: 900px;
+    margin: auto;
+}
+
+h1, h2 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+table {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+button {
+    background: var(--success);
+    border: none;
+    font-weight: 600;
+}
+
+/* =====================
+   DARK MODE TOGGLE
+===================== */
+.toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-alt);
+    padding: 8px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* =====================
+   WHATSAPP FLOAT
+===================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #25D366;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+.whatsapp-float:hover { opacity: 0.9; }
+
+footer small a { color: inherit; }
+</style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <img src="https://i.imgur.com/8FcuimC.png" alt="Orion Logo" style="height: 60px;">
-            <ul>
-                <li><a href="#product">Solutions</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <h1>Orion Dev Core</h1>
-        <p>Your 24/7 AI-Powered Office Manager</p>
-    </header>
 
-    <main style="max-width: 1100px; margin: auto; padding: 0 20px;">
-        <section id="product">
-            <div class="pricing-grid">
-                <div class="card">
-                    <h3>Orion Nano</h3>
-                    <div class="price">$149 <small>Setup</small></div>
-                    <div class="price">$19 <small>/mo</small></div>
-                    <hr>
-                    <p>Digital Presence Foundation.</p>
-                </div>
+<!-- Dark Mode Toggle -->
+<div class="toggle" onclick="toggleTheme()">🌓 Theme</div>
 
-                <div class="card featured">
-                    <h3>Orion Core</h3>
-                    <div class="price">$399 <small>Setup</small></div>
-                    <div class="price">$59 <small>/mo</small></div>
-                    <button>Get Started</button>
-                    <hr>
-                    <p><strong>Automated Business System:</strong></p>
-                    <ul style="font-size: 14px; list-style: none; padding: 0;">
-                        <li>✅ Branded Landing Page</li>
-                        <li>✅ Google Sheets & Workspace Automation</li>
-                        <li>✅ Secure Universal Payment Links</li>
-                    </ul>
-                </div>
+<!-- Header -->
+<header>
+    <h1>Orion Dev Core</h1>
+    <p>AI Amplifies, I Create.</p>
+</header>
 
-                <div class="card">
-                    <h3>Orion Vertex</h3>
-                    <div class="price">$999 <small>Setup</small></div>
-                    <div class="price">$149 <small>/mo</small></div>
-                    <hr>
-                    <p><strong>AI Office Manager:</strong> Gemini Vertex piloted agent acting as your receptionist and PA.</p>
-                </div>
-            </div>
-        </section>
+<!-- Hero -->
+<section>
+    <h2>Your AI Office Manager</h2>
+    <p>
+        Orion runs your front office 24/7.  
+        It chats naturally, qualifies leads, books appointments,
+        and triggers secure payments.
+    </p>
+</section>
 
-        <section style="text-align: center;">
-            <p><small>ACCEPTED PAYMENTS</small></p>
-            <div class="payment-icons">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay">
-            </div>
-        </section>
+<!-- Products -->
+<section>
+<h2>Products</h2>
 
-        <section id="contact">
-            <form action="YOUR_APPS_SCRIPT_URL" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="How can Orion help?"></textarea>
-                <button type="submit">Book Demo</button>
-            </form>
-        </section>
-    </main>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th>For</th>
+<th>Includes</th>
+<th>Monthly</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Orion Start</td>
+<td>Solo & side hustles</td>
+<td>Landing page, smart form, payments</td>
+<td>$19</td>
+</tr>
+<tr>
+<td>Orion Pro</td>
+<td>Professionals</td>
+<td>Bookings, calendar, reminders</td>
+<td>$39</td>
+</tr>
+<tr>
+<td>Orion Office</td>
+<td>Practices</td>
+<td>Advanced workflows, reporting</td>
+<td>$99</td>
+</tr>
+<tr>
+<td>Orion AI</td>
+<td>Scaling teams</td>
+<td>AI receptionist + WhatsApp</td>
+<td>$149</td>
+</tr>
+</tbody>
+</table>
+</section>
 
-    <footer>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-            <div>
-                <h4>Contact Info</h4>
-                [span_5](start_span)[span_6](start_span)<p>26 Vasco Da Gama, Amanzimtoti, 4126, SA[span_5](end_span)[span_6](end_span)</p>
-                <p>WhatsApp: +27 72 497 1810 | [span_7](start_span)+27 78 092 0145[span_7](end_span)</p>
-            </div>
-            <div>
-                <h4>POPIA Compliance</h4>
-                [span_8](start_span)[span_9](start_span)<p>Orion Dev Core acts as an <strong>"operator"</strong> processing personal information on behalf of our clients[span_8](end_span)[span_9](end_span). [span_10](start_span)[span_11](start_span)Data is managed securely within Google Workspace environments[span_10](end_span)[span_11](end_span).</p>
-            </div>
-        </div>
-        <hr>
-        <p style="text-align: center;">
-            <strong>Created by Orion Dev Core | Powered by Google | Piloted by Gemini Vertex</strong><br>
-            <small>© 2025 AI Amplifies, I Create.</small>
-        </p>
-    </footer>
+<!-- How It Works -->
+<section>
+<h2>How It Works</h2>
+<ol>
+<li>Lead arrives via website or WhatsApp</li>
+<li>Orion builds rapport and qualifies</li>
+<li>Details stored securely</li>
+<li>Bookings & payments triggered</li>
+<li>You show up prepared</li>
+</ol>
+</section>
+
+<!-- Vertex AI / Gemini -->
+<section>
+<h2>AI Architecture</h2>
+<p>
+Orion is powered by a multi-layer AI stack:
+</p>
+<ul>
+<li><strong>Gemini</strong> – Natural, context-aware conversations</li>
+<li><strong>Vertex AI</strong> – Secure orchestration and scaling</li>
+<li><strong>Automation Layer</strong> – Sheets, email, calendar, payments</li>
+</ul>
+<p>
+This isn’t a chatbot.  
+It’s a digital office manager.
+</p>
+</section>
+
+<!-- Contact -->
+<section>
+<h2>Book a Demo</h2>
+
+<form action="https://script.google.com/macros/s/AKfycbyLvpHcsQT08F2DSp38IlcwcfVlNdQckIndLRa9ztLEdUhSZk1sIxSi1SD4lQ8ViKDzLQ/exec" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<input type="tel" name="phone" placeholder="Phone (optional)">
+<select name="package">
+<option>Orion Start</option>
+<option>Orion Pro</option>
+<option>Orion Office</option>
+<option>Orion AI</option>
+</select>
+<textarea name="message" placeholder="Tell us about your business..."></textarea>
+<button type="submit">Request Demo</button>
+</form>
+</section>
+
+<!-- Footer -->
+<footer>
+<p>© 2025 Orion Dev Core</p>
+<small>
+<a href="https://github.com/Orion-Dev-Core/Home-page/blob/main/PrivacyPolicy.pdf" target="_blank">
+Privacy Policy
+</a>
+</small>
+</footer>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/27780920145?text=Hi%20Orion%2C%20I%E2%80%99d%20like%20to%20automate%20my%20office." 
+   target="_blank" class="whatsapp-float">
+WhatsApp Orion
+</a>
+
+<!-- Theme Script -->
+<script>
+const storedTheme = localStorage.getItem("theme");
+if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme);
+else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+    document.documentElement.setAttribute("data-theme", "dark");
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+}
+</script>
+
 </body>
 </html>
-
