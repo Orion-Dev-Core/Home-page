@@ -6,40 +6,24 @@
     <title>Orion Dev Core – AI Office Manager</title>
     <link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
     <style>
-        :root { --primary: #1a365d; --success: #1a73e8; --bg: #f8f9fa; }
-        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-        body { background: #fff; color: #3c4043; line-height: 1.6; font-family: 'Google Sans', Arial, sans-serif; }
+        :root { --primary: #1a365d; --success: #1a73e8; }
+        body { background: #fff; color: #3c4043; line-height: 1.6; }
         h1, h2, h3 { color: var(--primary); font-weight: 400; }
-        button, .btn-primary { background: var(--success) !important; border: 1px solid var(--success); color: white !important; border-radius: 4px; padding: 10px 24px; }
-        header { padding: 2rem 1rem; text-align: center; }
-        .logo-container img { max-height: 80px; width: auto; margin-bottom: 10px; }
-        
-        /* Google Workspace Style Grid */
         .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .pricing-card { background: white; border: 1px solid #dadce0; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; text-align: left; transition: 0.3s; }
-        .active-card { border: 2px solid #1a73e8 !important; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-        .coming-soon { opacity: 0.5; background: #f1f3f4; }
-        
-        .price { font-size: 28px; color: #3c4043; font-weight: bold; margin: 10px 0; }
-        .feature-list { list-style: none; padding: 0; margin-top: 1.5rem; border-top: 1px solid #dadce0; padding-top: 1.5rem; }
-        .feature-list li { margin-bottom: 12px; font-size: 14px; display: flex; align-items: center; }
-        
-        footer { background: #f8f9fa; padding: 3rem 1rem; margin-top: 5rem; border-top: 1px solid #dadce0; font-size: 0.85rem; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+        .card { border: 1px solid #dadce0; padding: 2rem; border-radius: 8px; display: flex; flex-direction: column; }
+        .featured { border: 2px solid #1a73e8; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .price { font-size: 28px; font-weight: bold; margin: 10px 0; }
+        .payment-icons img { height: 25px; margin: 5px; opacity: 0.8; }
+        footer { background: #f8f9fa; padding: 3rem 1rem; border-top: 1px solid #dadce0; font-size: 0.85rem; }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo-container">
-                <img src="https://i.imgur.com/8FcuimC.png" alt="Orion Dev Core Logo">
-                <p><em>AI Amplifies, I Create.</em></p>
-            </div>
+            <img src="https://i.imgur.com/8FcuimC.png" alt="Orion Logo" style="height: 60px;">
             <ul>
-                <li><a href="#home">Home</a></li>
                 <li><a href="#product">Solutions</a></li>
-                <li><a href="#how-it-works">Process</a></li>
-                <li><a href="#about">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <h1>Orion Dev Core</h1>
@@ -47,84 +31,76 @@
     </header>
 
     <main style="max-width: 1100px; margin: auto; padding: 0 20px;">
-        <section style="text-align: center; padding: 2rem 0; opacity: 0.7;">
-            <p><small>POWERED BY</small></p>
-            <div style="display: flex; justify-content: center; gap: 40px; align-items: center; flex-wrap: wrap;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" height="25">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Gemini_language_model_logo.svg" height="30">
-                <img src="https://www.yoco.com/blog/wp-content/uploads/2021/06/yoco-logo.png" height="30">
-            </div>
-        </section>
-
         <section id="product">
-            <h2 style="text-align: center;">Strategic Automation Packages</h2>
             <div class="pricing-grid">
-                <div class="pricing-card coming-soon">
-                    <h3>Starter</h3>
-                    <div class="price">Coming Soon</div>
-                    <p>Essential digital presence.</p>
+                <div class="card">
+                    <h3>Orion Nano</h3>
+                    <div class="price">$149 <small>Setup</small></div>
+                    <div class="price">$19 <small>/mo</small></div>
+                    <hr>
+                    <p>Digital Presence Foundation.</p>
                 </div>
 
-                <div class="pricing-card active-card">
-                    <div style="color: #1a73e8; font-weight: bold; font-size: 12px; text-transform: uppercase;">Most Popular</div>
-                    <h3>Star Pack</h3>
-                    <div class="price">R1,290 <small style="font-size: 14px; font-weight: normal;">Setup</small></div>
-                    <div class="price">R499 <small style="font-size: 14px; font-weight: normal;">/ Month</small></div>
-                    <a href="#about" class="btn-primary" style="text-align: center;">Get Started</a>
-                    <ul class="feature-list">
-                        <li>✅ Mobile-friendly Landing Page</li>
-                        <li>✅ Custom Intake Forms (Google Sheets)</li>
-                        <li>✅ Automated Gmail Confirmations</li>
-                        <li>✅ Google Calendar Sync & Reminders</li>
-                        <li>✅ Secure Yoco Payment Links</li>
+                <div class="card featured">
+                    <h3>Orion Core</h3>
+                    <div class="price">$399 <small>Setup</small></div>
+                    <div class="price">$59 <small>/mo</small></div>
+                    <button>Get Started</button>
+                    <hr>
+                    <p><strong>Automated Business System:</strong></p>
+                    <ul style="font-size: 14px; list-style: none; padding: 0;">
+                        <li>✅ Branded Landing Page</li>
+                        <li>✅ Google Sheets & Workspace Automation</li>
+                        <li>✅ Secure Universal Payment Links</li>
                     </ul>
                 </div>
 
-                <div class="pricing-card coming-soon">
-                    <h3>Orion AI</h3>
-                    <div class="price">Coming Soon</div>
-                    <p>Gemini-powered reasoning office manager.</p>
+                <div class="card">
+                    <h3>Orion Vertex</h3>
+                    <div class="price">$999 <small>Setup</small></div>
+                    <div class="price">$149 <small>/mo</small></div>
+                    <hr>
+                    <p><strong>AI Office Manager:</strong> Gemini Vertex piloted agent acting as your receptionist and PA.</p>
                 </div>
             </div>
         </section>
 
-        <section id="about">
-            <h2 style="text-align: center;">Ready to Automate?</h2>
-            <form action="YOUR_APPS_SCRIPT_URL_HERE" method="POST">
-                <label>Full Name</label>
-                <input type="text" name="name" required>
-                <label>Email Address</label>
-                <input type="email" name="email" required>
-                <input type="hidden" name="package" value="Star Pack">
-                <label>Tell us about your business</label>
-                <textarea name="message" rows="4" placeholder="How can Orion help?"></textarea>
-                <button type="submit">Book Demo Call</button>
-            </form>
-            <div style="text-align: center; margin-top: 2rem;">
-                <p><strong>Direct Support:</strong> WhatsApp +27 72 497 1810 | Business +27 78 092 0145</p>
+        <section style="text-align: center;">
+            <p><small>ACCEPTED PAYMENTS</small></p>
+            <div class="payment-icons">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b0/Apple_Pay_logo.svg" alt="Apple Pay">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" alt="Google Pay">
             </div>
+        </section>
+
+        <section id="contact">
+            <form action="YOUR_APPS_SCRIPT_URL" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="How can Orion help?"></textarea>
+                <button type="submit">Book Demo</button>
+            </form>
         </section>
     </main>
 
     <footer>
-        <div class="footer-grid">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
             <div>
                 <h4>Contact Info</h4>
-                [span_11](start_span)[span_12](start_span)<p>Orion Dev Core<br>26 Vasco Da Gama, Amanzimtoti<br>South Africa, 4126[span_11](end_span)[span_12](end_span)</p>
-                [span_13](start_span)<p>grahamschubach@yahoo.com[span_13](end_span)</p>
-            </div>
-            <div>
-                <h4>Legal Resources</h4>
-                <a href="PrivacyPolicy.pdf" target="_blank">Privacy Policy (POPIA)</a><br>
-                <a href="ServiceAgreement.pdf" target="_blank">Service Agreement (Star Pack)</a>
+                [span_5](start_span)[span_6](start_span)<p>26 Vasco Da Gama, Amanzimtoti, 4126, SA[span_5](end_span)[span_6](end_span)</p>
+                <p>WhatsApp: +27 72 497 1810 | [span_7](start_span)+27 78 092 0145[span_7](end_span)</p>
             </div>
             <div>
                 <h4>POPIA Compliance</h4>
-                [span_14](start_span)[span_15](start_span)<p>Orion Dev Core acts as an <strong>"operator"</strong> processing personal information on behalf of our clients (the <strong>"responsible parties"</strong>)[span_14](end_span)[span_15](end_span). [span_16](start_span)[span_17](start_span)Data is stored securely in Google Workspace and Yoco environments[span_16](end_span)[span_17](end_span).</p>
+                [span_8](start_span)[span_9](start_span)<p>Orion Dev Core acts as an <strong>"operator"</strong> processing personal information on behalf of our clients[span_8](end_span)[span_9](end_span). [span_10](start_span)[span_11](start_span)Data is managed securely within Google Workspace environments[span_10](end_span)[span_11](end_span).</p>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 3rem; color: #70757a;">
-            © 2025 Orion Dev Core | AI Amplifies, I Create.
+        <hr>
+        <p style="text-align: center;">
+            <strong>Created by Orion Dev Core | Powered by Google | Piloted by Gemini Vertex</strong><br>
+            <small>© 2025 AI Amplifies, I Create.</small>
         </p>
     </footer>
 </body>
