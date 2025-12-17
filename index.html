@@ -1,249 +1,166 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Orion Dev Core – AI Office Manager</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Orion Dev Core – Human-centric AI office management.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Orion Dev Core</title>
 
-<link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css">
+  <!-- THEME -->
+  <style>
+    :root {
+      --primary: #1a365d;
+      --success: #48bb78;
+      --bg: #f7fafc;
+      --text: #1a202c;
+      --card: #ffffff;
+    }
 
-<style>
-/* =====================
-   DESIGN SYSTEM
-===================== */
-:root {
-    --bg: #f7fafc;
-    --bg-alt: #ffffff;
-    --text: #1a202c;
-    --primary: #1a365d;
-    --success: #48bb78;
-}
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --card: #020617;
+    }
 
-[data-theme="dark"] {
-    --bg: #0f172a;
-    --bg-alt: #020617;
-    --text: #e5e7eb;
-    --primary: #93c5fd;
-    --success: #22c55e;
-}
+    * {
+      box-sizing: border-box;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
 
-/* =====================
-   BASE STYLES
-===================== */
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-                 "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: linear-gradient(135deg, var(--bg), var(--bg-alt));
-    color: var(--text);
-    transition: background 0.3s ease, color 0.3s ease;
-}
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, var(--bg) 0%, white 100%);
+      color: var(--text);
+    }
 
-header {
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 1.5rem;
+      background: var(--card);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-section {
-    max-width: 900px;
-    margin: auto;
-}
+    main {
+      padding: 2rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
 
-h1, h2 {
-    font-weight: 600;
-    letter-spacing: -0.02em;
-}
+    h1, h2 {
+      color: var(--primary);
+    }
 
-table {
-    border-radius: 16px;
-    overflow: hidden;
-}
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
 
-button {
-    background: var(--success);
-    border: none;
-    font-weight: 600;
-}
+    button {
+      background: var(--success);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.2rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
 
-/* =====================
-   DARK MODE TOGGLE
-===================== */
-.toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: var(--bg-alt);
-    padding: 8px 14px;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
+    button:hover {
+      opacity: 0.9;
+    }
 
-/* =====================
-   WHATSAPP FLOAT
-===================== */
-.whatsapp-float {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    background: #25D366;
-    color: #fff;
-    padding: 14px 18px;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-.whatsapp-float:hover { opacity: 0.9; }
+    .toggle {
+      background: none;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
 
-footer small a { color: inherit; }
-</style>
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- HEADER -->
+  <header>
+    <img src="https://i.imgur.com/8FcuimC.png" alt="ODC_ABS" style="max-height:60px;width:auto;">
+    <button class="toggle" onclick="toggleTheme()">🌓 Theme</button>
+  </header>
 
-<!-- Dark Mode Toggle -->
-<div class="toggle" onclick="toggleTheme()">🌓 Theme</div>
+  <!-- MAIN -->
+  <main>
+    <section class="card">
+      <h1>Orion Dev Core</h1>
+      <p>
+        Building intelligent systems, automation, and AI-powered platforms
+        with clarity, scalability, and purpose.
+      </p>
+    </section>
 
-<!-- Header -->
-<header>
-    <h1>Orion Dev Core</h1>
-    <p>AI Amplifies, I Create.</p>
-</header>
+    <section class="card">
+      <h2>🚀 Live Demo / Backend</h2>
+      <p>Connected Google Apps Script endpoint:</p>
+      <a href="https://script.google.com/macros/s/AKfycbyLvpHcsQT08F2DSp38IlcwcfVlNdQckIndLRa9ztLEdUhSZk1sIxSi1SD4lQ8ViKDzLQ/exec" target="_blank">
+        Open API Endpoint
+      </a>
+    </section>
 
-<!-- Hero -->
-<section>
-    <h2>Your AI Office Manager</h2>
-    <p>
-        Orion runs your front office 24/7.  
-        It chats naturally, qualifies leads, books appointments,
-        and triggers secure payments.
-    </p>
-</section>
+    <section class="card">
+      <h2>💬 Contact via WhatsApp</h2>
+      <p>Talk directly with Orion Dev Core.</p>
+      <a href="https://wa.me/27780920145?text=Hi%20Orion%20Dev%20Core%2C%20I%27m%20interested%20in%20your%20services" target="_blank">
+        <button>Open WhatsApp</button>
+      </a>
+    </section>
 
-<!-- Products -->
-<section>
-<h2>Products</h2>
+    <section class="card">
+      <h2>🔐 Privacy Policy</h2>
+      <a href="https://github.com/Orion-Dev-Core/Home-page/blob/main/PrivacyPolicy.pdf" target="_blank">
+        View Privacy Policy (PDF)
+      </a>
+    </section>
+  </main>
 
-<table>
-<thead>
-<tr>
-<th>Product</th>
-<th>For</th>
-<th>Includes</th>
-<th>Monthly</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Orion Start</td>
-<td>Solo & side hustles</td>
-<td>Landing page, smart form, payments</td>
-<td>$19</td>
-</tr>
-<tr>
-<td>Orion Pro</td>
-<td>Professionals</td>
-<td>Bookings, calendar, reminders</td>
-<td>$39</td>
-</tr>
-<tr>
-<td>Orion Office</td>
-<td>Practices</td>
-<td>Advanced workflows, reporting</td>
-<td>$99</td>
-</tr>
-<tr>
-<td>Orion AI</td>
-<td>Scaling teams</td>
-<td>AI receptionist + WhatsApp</td>
-<td>$149</td>
-</tr>
-</tbody>
-</table>
-</section>
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Orion Dev Core • Built with clarity ⚡
+  </footer>
 
-<!-- How It Works -->
-<section>
-<h2>How It Works</h2>
-<ol>
-<li>Lead arrives via website or WhatsApp</li>
-<li>Orion builds rapport and qualifies</li>
-<li>Details stored securely</li>
-<li>Bookings & payments triggered</li>
-<li>You show up prepared</li>
-</ol>
-</section>
+  <!-- SCRIPT -->
+  <script>
+    const root = document.documentElement;
+    const savedTheme = localStorage.getItem("theme");
+    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-<!-- Vertex AI / Gemini -->
-<section>
-<h2>AI Architecture</h2>
-<p>
-Orion is powered by a multi-layer AI stack:
-</p>
-<ul>
-<li><strong>Gemini</strong> – Natural, context-aware conversations</li>
-<li><strong>Vertex AI</strong> – Secure orchestration and scaling</li>
-<li><strong>Automation Layer</strong> – Sheets, email, calendar, payments</li>
-</ul>
-<p>
-This isn’t a chatbot.  
-It’s a digital office manager.
-</p>
-</section>
+    if (savedTheme) {
+      root.setAttribute("data-theme", savedTheme);
+    } else if (systemDark) {
+      root.setAttribute("data-theme", "dark");
+    }
 
-<!-- Contact -->
-<section>
-<h2>Book a Demo</h2>
-
-<form action="https://script.google.com/macros/s/AKfycbyLvpHcsQT08F2DSp38IlcwcfVlNdQckIndLRa9ztLEdUhSZk1sIxSi1SD4lQ8ViKDzLQ/exec" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<input type="tel" name="phone" placeholder="Phone (optional)">
-<select name="package">
-<option>Orion Start</option>
-<option>Orion Pro</option>
-<option>Orion Office</option>
-<option>Orion AI</option>
-</select>
-<textarea name="message" placeholder="Tell us about your business..."></textarea>
-<button type="submit">Request Demo</button>
-</form>
-</section>
-
-<!-- Footer -->
-<footer>
-<p>© 2025 Orion Dev Core</p>
-<small>
-<a href="https://github.com/Orion-Dev-Core/Home-page/blob/main/PrivacyPolicy.pdf" target="_blank">
-Privacy Policy
-</a>
-</small>
-</footer>
-
-<!-- WhatsApp -->
-<a href="https://wa.me/27780920145?text=Hi%20Orion%2C%20I%E2%80%99d%20like%20to%20automate%20my%20office." 
-   target="_blank" class="whatsapp-float">
-WhatsApp Orion
-</a>
-
-<!-- Theme Script -->
-<script>
-const storedTheme = localStorage.getItem("theme");
-if (storedTheme) document.documentElement.setAttribute("data-theme", storedTheme);
-else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
-    document.documentElement.setAttribute("data-theme", "dark");
-
-function toggleTheme() {
-    const current = document.documentElement.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
-    document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-}
-</script>
-
+    function toggleTheme() {
+      const current = root.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    }
+  </script>
 </body>
 </html>
