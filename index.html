@@ -1,165 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Orion Dev Core</title>
-
-  <!-- THEME -->
-  <style>
-    :root {
-      --primary: #1a365d;
-      --success: #48bb78;
-      --bg: #f7fafc;
-      --text: #1a202c;
-      --card: #ffffff;
-    }
-
-    [data-theme="dark"] {
-      --bg: #0f172a;
-      --text: #e5e7eb;
-      --card: #020617;
-    }
-
-    * {
-      box-sizing: border-box;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
-
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: linear-gradient(135deg, var(--bg) 0%, white 100%);
-      color: var(--text);
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1.5rem;
-      background: var(--card);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    main {
-      padding: 2rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    h1, h2 {
-      color: var(--primary);
-    }
-
-    .card {
-      background: var(--card);
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      margin-bottom: 2rem;
-    }
-
-    button {
-      background: var(--success);
-      color: white;
-      border: none;
-      padding: 0.75rem 1.2rem;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .toggle {
-      background: none;
-      border: 1px solid var(--primary);
-      color: var(--primary);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      opacity: 0.8;
-    }
-
-    a {
-      color: var(--primary);
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orion Dev Core | Future Automated</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: radial-gradient(circle at center, #0f172a 0%, #020617 100%);
+            color: #f8fafc;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow {
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+        }
+    </style>
 </head>
+<body class="min-h-screen flex flex-col items-center justify-center p-6">
 
-<body>
-  <!-- HEADER -->
-  <header>
-    <img src="https://i.imgur.com/8FcuimC.png" alt="ODC_ABS" style="max-height:60px;width:auto;">
-    <button class="toggle" onclick="toggleTheme()">🌓 Theme</button>
-  </header>
+    <div class="mb-8 text-center">
+        <h1 class="text-5xl font-extrabold tracking-tighter glow text-sky-400 mb-2">
+            ORION DEV CORE
+        </h1>
+        <p class="text-slate-400 text-lg italic">"The stars are just coordinates."</p>
+    </div>
 
-  <!-- MAIN -->
-  <main>
-    <section class="card">
-      <h1>Orion Dev Core</h1>
-      <p>
-        Building intelligent systems, automation, and AI-powered platforms
-        with clarity, scalability, and purpose.
-      </p>
-    </section>
+    <div class="glass p-8 rounded-3xl max-w-md w-full shadow-2xl">
+        <h2 class="text-2xl font-bold mb-4 text-center">System Initializing...</h2>
+        <p class="text-slate-400 mb-6 text-center leading-relaxed">
+            We are building the next generation of AI-driven business solutions. 
+            Want to be part of the Core?
+        </p>
 
-    <section class="card">
-      <h2>🚀 Live Demo / Backend</h2>
-      <p>Connected Google Apps Script endpoint:</p>
-      <a href="https://script.google.com/macros/s/AKfycbyLvpHcsQT08F2DSp38IlcwcfVlNdQckIndLRa9ztLEdUhSZk1sIxSi1SD4lQ8ViKDzLQ/exec" target="_blank">
-        Open API Endpoint
-      </a>
-    </section>
+        <div class="space-y-4">
+            <input type="email" placeholder="Enter your email" 
+                class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 focus:outline-none focus:border-sky-500 transition-all">
+            
+            <button onclick="alert('System Synced! Mintaka is processing...')" 
+                class="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-3 rounded-xl transition-all active:scale-95 shadow-lg shadow-sky-900/20">
+                JOIN THE CORE
+            </button>
+        </div>
+    </div>
 
-    <section class="card">
-      <h2>💬 Contact via WhatsApp</h2>
-      <p>Talk directly with Orion Dev Core.</p>
-      <a href="https://wa.me/27780920145?text=Hi%20Orion%20Dev%20Core%2C%20I%27m%20interested%20in%20your%20services" target="_blank">
-        <button>Open WhatsApp</button>
-      </a>
-    </section>
+    <footer class="mt-12 text-slate-500 text-sm">
+        &copy; 2025 Orion Dev Core | Powered by Mintaka AI 😅🚀
+    </footer>
 
-    <section class="card">
-      <h2>🔐 Privacy Policy</h2>
-      <a href="https://github.com/Orion-Dev-Core/Home-page/blob/main/PrivacyPolicy.pdf" target="_blank">
-        View Privacy Policy (PDF)
-      </a>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2025 Orion Dev Core • Built with clarity ⚡
-  </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    const root = document.documentElement;
-    const savedTheme = localStorage.getItem("theme");
-    const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    if (savedTheme) {
-      root.setAttribute("data-theme", savedTheme);
-    } else if (systemDark) {
-      root.setAttribute("data-theme", "dark");
-    }
-
-    function toggleTheme() {
-      const current = root.getAttribute("data-theme");
-      const next = current === "dark" ? "light" : "dark";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("theme", next);
-    }
-  </script>
 </body>
 </html>
+ 
